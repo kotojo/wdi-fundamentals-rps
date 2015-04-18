@@ -87,5 +87,34 @@ function playToFive() {
     }
     return [playerWins, computerWins];
 }
-playToFive();
+function playToX() {
+    console.log("Let's play Rock, Paper, Scissors");
+    console.log("How many rounds would you like to play to?");
+    
+    var turns = prompt();
+    var playerWins = 0;
+    var computerWins = 0;
+
+    while (playerWins < turns && computerWins < turns) {
+        var playerMove = getPlayerMove();
+        
+        var computerMove = getComputerMove();
+        
+        getWinner(playerMove, computerMove);
+        var winner = getWinner(playerMove, computerMove);
+        if (winner == 'player') {
+            playerWins +=1;
+        } else if (winner == 'computer') {
+            computerWins += 1;
+        } else {
+            playerWins+=0;
+            computerWins+=0;
+        }
+        console.log('Player chose ' + playerMove + ' and Computer chose ' + computerMove);
+        console.log('The score is ' + playerWins + ' for Player and ' + computerWins + ' for Computer');
+    }
+    return [playerWins, computerWins];
+}
+
+playtoX();
 
